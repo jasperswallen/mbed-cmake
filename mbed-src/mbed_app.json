@@ -1,9 +1,17 @@
 {
+    "macros": [
+        "MBED_HEAP_STATS_ENABLED=1",
+        "MBED_STACK_STATS_ENABLED=1",
+        "MBED_MEM_TRACING_ENABLED=1"
+    ],
     "target_overrides": {
         "*": {
             "platform.stdio-baud-rate": 115200,
             "target.printf_lib": "std",
-            "target.components_add" : ["SD", "I2CEE"]
+            "platform.error-filename-capture-enabled": true,
+            "platform.error-hist-enabled": true,
+            "platform.heap-stats-enabled": true,
+            "platform.stack-stats-enabled": true
         }
     }
 }
